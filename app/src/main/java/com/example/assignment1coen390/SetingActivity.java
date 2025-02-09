@@ -77,6 +77,9 @@ public class SetingActivity extends AppCompatActivity {
         // Set the return back icon
         toolbar.setNavigationIcon(R.drawable.ic_back_arrow);
 
+        // set the button to invisible
+        button.setVisibility(View.INVISIBLE);
+
         // Set the OnClick listener for the return back icon
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +146,7 @@ public class SetingActivity extends AppCompatActivity {
                         name = Str_1 + "\n" + Str_2 + "\n" + Str_3 + "\n" + e4.getText().toString() +"\n"+ actions;
 
                         sharedPreferenceHelper.setName(name);
+                        button.setVisibility(View.INVISIBLE);
 
                         Log.d("action--------------------", actions);
                         Log.d("name--------------------", name);
@@ -185,6 +189,7 @@ public class SetingActivity extends AppCompatActivity {
             e2.setEnabled(true);
             e3.setEnabled(true);
             e4.setEnabled(true);
+            button.setVisibility(View.VISIBLE);
             return true;
         }
         return super.onOptionsItemSelected(item);
